@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667546, g: 0.48427135, b: 0.5645225, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9987,6 +9987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1079335188}
   - component: {fileID: 1079335187}
+  - component: {fileID: 1079335189}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10035,6 +10036,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1079335189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079335186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485537f2ae5720642b7d5f769ba73504, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standardTurrentPrefab: {fileID: -927199367670048503, guid: c64013868cf6f854dab51f6983c7763b,
+    type: 3}
 --- !u!1 &1083131722
 GameObject:
   m_ObjectHideFlags: 0
