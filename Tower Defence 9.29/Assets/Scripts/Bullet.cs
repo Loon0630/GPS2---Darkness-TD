@@ -2,8 +2,10 @@
 
 public class Bullet : MonoBehaviour
 {
+    public int damage = 50;
     private Transform target;
     [SerializeField] private float speed;
+
 
     public void Chase(Transform _target)
     {
@@ -25,6 +27,8 @@ public class Bullet : MonoBehaviour
         if(dir.magnitude <= distanceThisFrame)
         {
             HitTarget();
+            target.GetComponent<Enemy>().TakeDamage(damage);
+            Die();
             return;
         }
 
@@ -35,5 +39,10 @@ public class Bullet : MonoBehaviour
     void HitTarget()
     {
         Destroy(gameObject);
+    }
+
+    void Die()
+    {
+        GameObject.Destroy(this.gameObject);
     }
 }

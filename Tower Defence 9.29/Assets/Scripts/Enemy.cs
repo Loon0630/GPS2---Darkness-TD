@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        totalHp = hp;//
+        totalHp = hp;
         positions = Waypoints.positions;
     }
 
@@ -57,6 +57,6 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
-        Destroy(this.gameObject);
+        GameObject.Destroy(this.gameObject);
     }
 }
