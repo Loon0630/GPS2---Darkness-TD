@@ -30,7 +30,7 @@ public class EnemyRight : MonoBehaviour
         {
             index++;
         }
-        if (index > positions.Length - 1)
+        if (index>positions.Length-1)
         {
             ReachDestination();
         }

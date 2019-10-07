@@ -10,6 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public Transform START;
     public Transform RIGHTSTART;
     public float waveRate = 0.3f;
+    public float waveRateRight = 1f;
 
     void Start()
     {
@@ -53,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 yield return 0;
             }
-            yield return new WaitForSeconds(waveRate);
+            yield return new WaitForSeconds(waveRateRight);
         }
     }
 

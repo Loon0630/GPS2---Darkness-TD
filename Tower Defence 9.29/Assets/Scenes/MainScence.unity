@@ -9840,6 +9840,7 @@ MonoBehaviour:
   START: {fileID: 502931977}
   RIGHTSTART: {fileID: 1165096014}
   waveRate: 10
+  waveRateRight: 1
 --- !u!4 &1079335188
 Transform:
   m_ObjectHideFlags: 0
@@ -16682,6 +16683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6011313810742117735, guid: caf5f0d1485ee894bac24bbc1dc95d2c,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf5f0d1485ee894bac24bbc1dc95d2c, type: 3}
