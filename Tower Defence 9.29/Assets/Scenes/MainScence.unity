@@ -3563,7 +3563,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1176300964}
-        m_MethodName: PurchaseArrowTurrent
+        m_MethodName: SelectArrowTurrent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9346,7 +9346,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: ArrowTurrent
 --- !u!222 &1035838276
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10182,6 +10182,7 @@ GameObject:
   - component: {fileID: 1079335188}
   - component: {fileID: 1079335187}
   - component: {fileID: 1079335189}
+  - component: {fileID: 1079335190}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10260,6 +10261,19 @@ MonoBehaviour:
   standardTurrentPrefab: {fileID: 7181709993455018950, guid: ef857da1786a0004da1d6b647da25062,
     type: 3}
   anotherTurrentPrefab: {fileID: 0}
+--- !u!114 &1079335190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079335186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f35a79218a64884d9ed089efecc08e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMoney: 400
 --- !u!1 &1083131722
 GameObject:
   m_ObjectHideFlags: 0
@@ -10926,7 +10940,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1144168003
 GameObject:
@@ -11332,6 +11346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 852f338ceef80f843b18502d7ab1b8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  standardTurrent:
+    prefab: {fileID: 7181709993455018950, guid: ef857da1786a0004da1d6b647da25062,
+      type: 3}
+    cost: 100
 --- !u!114 &1176300965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16988,7 +17006,7 @@ Transform:
   - {fileID: 403430764}
   - {fileID: 1246183257}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1769241902
 MonoBehaviour:

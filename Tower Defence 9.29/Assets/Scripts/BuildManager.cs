@@ -13,26 +13,35 @@ public class BuildManager : MonoBehaviour
             Debug.LogError("More than one BuildManager");
         }
         instance = this;
-
     }
 
     public GameObject standardTurrentPrefab;
     public GameObject anotherTurrentPrefab;
 
-    private GameObject turrentToBuild;
+    private TurrentBlueprint turrentToBuild;
 
+    public bool CanBuild { get { return turrentToBuild != null; } }
+
+    public void BuildTurrentOn (MapCube mapCube)
+    {
+        if(PlayerStats.Money < turrentToBuild.cost)
+        {
+            Debug.Log("No money");
+            return;
+        }
+
+        PlayerStats.Money -= turrentToBuild.cost;
+
+        GameObject turrent = (GameObject)Instantiate(turrentToBuild.prefab, mapCube.GetBuildPosition(), Quaternion.identity);
+        mapCube.turrent = turrent;
+    }
     private void Start()
     {
 
     }
-
-    public GameObject GetTurrentToBuild ()
+    public void SelectTurrentBuild (TurrentBlueprint turrent)
     {
-        return turrentToBuild;
+        turrentToBuild = turrent;
     }
-
-    public void SetTurrentBuild(GameObject turrent)
-    {
-        turrentToBuild = turrent;       
-    }
+   
 }

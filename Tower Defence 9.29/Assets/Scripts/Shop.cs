@@ -7,7 +7,7 @@ public class Shop : MonoBehaviour
 
     BuildManager buildManager;
 
-    private bool buildAdy=false;
+    public TurrentBlueprint standardTurrent;
 
     
 
@@ -18,17 +18,13 @@ public class Shop : MonoBehaviour
         
     }
 
-    public void PurchaseArrowTurrent()
+    public void SelectArrowTurrent()
     {
         Debug.Log("Purchase Arrow Turrent");
 
         // build tower (after click build)
-       
-        if(buildAdy==false)
-        {
-            buildManager.SetTurrentBuild(buildManager.standardTurrentPrefab);
-        }
-        buildAdy = true;
+            buildManager.SelectTurrentBuild(standardTurrent);
+        
     }
        
         

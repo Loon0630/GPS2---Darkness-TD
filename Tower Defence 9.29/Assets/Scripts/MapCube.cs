@@ -8,14 +8,15 @@ public class MapCube : MonoBehaviour
     public Color hoverColor;
     public Vector3 positionOffset;
 
-    private GameObject turrent;
+    [Header("Optional")]
+    public GameObject turrent;
 
     private Renderer rend;
     private Color startColor;
 
     BuildManager buildManager;
 
-    public bool build;
+    
 
     private void Start()
     {
@@ -25,9 +26,14 @@ public class MapCube : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
+    }
+
     private void OnMouseDown()
     {
-            if (buildManager.GetTurrentToBuild() == null)
+            if (!buildManager.CanBuild)
                 return;
 
             if (turrent != null)
@@ -35,14 +41,14 @@ public class MapCube : MonoBehaviour
                 Debug.Log("Can't build there!");
                 return;
             }
-            GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
-            turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+
+        buildManager.BuildTurrentOn(this);
          
     }
 
     void OnMouseEnter()
     {
-       if (buildManager.GetTurrentToBuild() == null)
+       if (!buildManager.CanBuild)
            return;
 
         rend.material.color = hoverColor;
