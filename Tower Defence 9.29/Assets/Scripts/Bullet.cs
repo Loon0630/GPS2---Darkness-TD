@@ -26,17 +26,39 @@ public class Bullet : MonoBehaviour
 
         if(dir.magnitude <= distanceThisFrame)
         {
-            HitTarget();
-            target.GetComponent<Enemy>().TakeDamage(damage);
+            if (target.GetComponent<Enemy>() == true)
+            {
+                HitTarget();
+                target.GetComponent<Enemy>().TakeDamage(damage);
+            }
+            else if (target.GetComponent<EnemyRight>() == true)
+            {
+                HitTargetRight();
+                target.GetComponent<EnemyRight>().TakeDamage(damage);
+            }
+
             Die();
             return;
         }
+
+        /*if (dir.magnitude <= distanceThisFrame)
+        {
+            HitTarget();
+            target.GetComponent<EnemyRight>().TakeDamage(damage);
+            Die();
+            return;
+        }*/
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
     }
 
     void HitTarget()
+    {
+        Destroy(gameObject);
+    }
+
+    void HitTargetRight()
     {
         Destroy(gameObject);
     }
