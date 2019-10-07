@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class MapCube : MonoBehaviour
 {
@@ -12,28 +13,38 @@ public class MapCube : MonoBehaviour
     private Renderer rend;
     private Color startColor;
 
+    BuildManager buildManager;
 
+    public bool build;
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
+
+        buildManager = BuildManager.instance;
     }
 
     private void OnMouseDown()
     {
-        if (turrent !=null)
-        {
-            Debug.Log("Can't build there!");
-            return;
-        }
+            if (buildManager.GetTurrentToBuild() == null)
+                return;
 
-        GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
-        turrent=(GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+            if (turrent != null)
+            {
+                Debug.Log("Can't build there!");
+                return;
+            }
+            GameObject turrentToBuild = BuildManager.instance.GetTurrentToBuild();
+            turrent = (GameObject)Instantiate(turrentToBuild, transform.position + positionOffset, transform.rotation);
+         
     }
 
     void OnMouseEnter()
     {
+       if (buildManager.GetTurrentToBuild() == null)
+           return;
+
         rend.material.color = hoverColor;
     }
 
