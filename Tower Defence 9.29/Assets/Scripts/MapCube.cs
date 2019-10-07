@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class MapCube : MonoBehaviour
 {
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
     [Header("Optional")]
@@ -51,7 +52,16 @@ public class MapCube : MonoBehaviour
        if (!buildManager.CanBuild)
            return;
 
-        rend.material.color = hoverColor;
+
+       if(buildManager.HasMoney)
+       {
+            rend.material.color = hoverColor;
+       }
+       else
+       {
+            rend.material.color = notEnoughMoneyColor;
+       }
+       
     }
 
     private void OnMouseExit()

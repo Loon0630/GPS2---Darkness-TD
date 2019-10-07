@@ -21,6 +21,7 @@ public class BuildManager : MonoBehaviour
     private TurrentBlueprint turrentToBuild;
 
     public bool CanBuild { get { return turrentToBuild != null; } }
+    public bool HasMoney { get { return PlayerStats.Money >= turrentToBuild.cost; } }
 
     public void BuildTurrentOn (MapCube mapCube)
     {
