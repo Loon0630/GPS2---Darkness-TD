@@ -10,7 +10,7 @@ public class MapCube : MonoBehaviour
     public Vector3 positionOffset;
 
     [Header("Optional")]
-    public GameObject turrent;
+    public GameObject turret;
 
     private Renderer rend;
     private Color startColor;
@@ -37,13 +37,13 @@ public class MapCube : MonoBehaviour
             if (!buildManager.CanBuild)
                 return;
 
-            if (turrent != null)
+            if (turret != null)
             {
                 Debug.Log("Can't build there!");
                 return;
             }
 
-        buildManager.BuildTurrentOn(this);
+        buildManager.BuildTurretOn(this);
          
     }
 

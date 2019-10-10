@@ -7,7 +7,7 @@ public class Shop : MonoBehaviour
 
     BuildManager buildManager;
 
-    public TurrentBlueprint standardTurrent;
+    public TurretBlueprint standardTurret;
 
     
 
@@ -18,17 +18,17 @@ public class Shop : MonoBehaviour
         
     }
 
-    public void SelectArrowTurrent()
+    public void SelectArrowTurret()
     {
-        Debug.Log("Purchase Arrow Turrent");
+        Debug.Log("Purchase Arrow Turret");
 
         // build tower (after click build)
-            buildManager.SelectTurrentBuild(standardTurrent);
+            buildManager.SelectTurretBuild(standardTurret);
         
     }
        
         
-    public void PurchaseRocketTurrent()
+    public void PurchaseRocketTurret()
     {
 
     }
