@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     private Transform target;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public Transform partToRotate;
 
     [SerializeField] private float range = 15f;
     [SerializeField] private string enemyTag = "Enemy";
@@ -54,8 +55,8 @@ public class Turret : MonoBehaviour
         //Locking target
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * turningSpeed).eulerAngles;
-        transform.rotation = Quaternion.Euler(0f,rotation.y, 0f);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turningSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f,rotation.y, 0f);
 
         if(fireCountdown <= 0f)
         {

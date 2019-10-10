@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7977331684094344726}
   - component: {fileID: 6820110091931211548}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: bulletRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da53b8b78e736c429d81e37c4fc3b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 100
   speed: 50
-  expRadius: 0
+  expRadius: 7
   impactEffect: {fileID: 6093094059035158268, guid: 76a9c144584864246996942a5e5747d5,
     type: 3}
